@@ -7,6 +7,7 @@ using UnityEngine.XR;
 public class BaseController : MonoBehaviour
 {
     [Header("General")]
+    public Transform rootTransform;
     public Transform headTransform;
 
     [Header("Rotation")]
@@ -17,8 +18,6 @@ public class BaseController : MonoBehaviour
 
     private void OnEnable()
     {
-        //Debug.Log("Enabling Init Controller");
-
         if (InputManager.instance.targetControlScheme == ControlSchemeEnum.VR)
         {
             InputManager.instance.EnableAllRays();
@@ -34,8 +33,6 @@ public class BaseController : MonoBehaviour
 
     private void OnDisable()
     {
-        //Debug.Log("Disabling Init Controller");
-
         canRotate = false;
 
         InputManager.instance.playerActions.DefaultControls.CharacterRotation.canceled -= OnRotation;
@@ -46,8 +43,6 @@ public class BaseController : MonoBehaviour
     {
         if (isActiveAndEnabled)
         {
-            //Debug.Log("Disabling Init Controller");
-
             canRotate = false;
 
             InputManager.instance.playerActions.DefaultControls.CharacterRotation.canceled -= OnRotation;

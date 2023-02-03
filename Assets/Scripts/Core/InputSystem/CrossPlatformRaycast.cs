@@ -14,8 +14,11 @@ public class CrossPlatformRaycast : MonoBehaviour
         leftHandController = GameObject.FindGameObjectWithTag("leftControllerXR");
         rightHandController = GameObject.FindGameObjectWithTag("rightControllerXR");
 
+        //Keeps track on mouse position ons screen
         InputManager.instance.playerActions.DefaultControls.MousePoint.performed += value => mousePosition = value.ReadValue<Vector2>();
         InputManager.instance.playerActions.DefaultControls.MousePoint.canceled += value => mousePosition = value.ReadValue<Vector2>();
+        
+        //Listen for mouse click callbacks
         InputManager.instance.playerActions.DefaultControls.MouseClick.canceled += RaycastReturnObject;
         InputManager.instance.playerActions.XRILeftHand.MouseClick.canceled += RaycastReturnObject;
         InputManager.instance.playerActions.XRIRightHand.MouseClick.canceled += RaycastReturnObject;

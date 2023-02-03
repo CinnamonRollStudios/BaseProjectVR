@@ -14,7 +14,6 @@ public class InputManager : MonoBehaviour
     public static InputManager instance { get; private set; }
 
     [Header("Input modules")]
-    public InputSystemUIInputModule baseInputModule;
     public XRUIInputModule xrInputModule;
     //public CrossPlatformCursor cursorController;
     public Gradient clearGradient;
@@ -67,7 +66,29 @@ public class InputManager : MonoBehaviour
             SetControlType(ControlSchemeEnum.Gamepad); //Start with gamepad because if you are on console then there will be no mouse input to switch inputs (pc can have gamepad and mouse inputs)
             //cursorController.CreateVirtualMouse();
         }
+    }
 
+    [ContextMenu("Disable Controls")]
+    public void DisableControls()
+    {
+        playerActions.Disable();
+    }
+
+    [ContextMenu("Enable Player Controls")]
+    public void EnablePlayerControls()
+    {
+        DisableControls();
+        playerActions.Enable();
+        playerActions.XRIHead.Enable();
+        playerActions.XRILeftHand.Enable();
+        playerActions.XRIRightHand.Enable();
+        playerActions.DefaultControls.Enable();
+    }
+
+    #region Input Examples
+
+    public void InputExamples()
+    {
         //DIFFERENT WAYS TO DO INPUTS (BELOW)
         ////Can place in update loop
         ////IsPressed(), WasReleasedThisFrame(), ReadValueAsButton(), WasPerformedThisFrame()
@@ -100,13 +121,13 @@ public class InputManager : MonoBehaviour
         //    //Code goes here
         //    Debug.Log("Jump"); 
         //};
-        //playerActions.DefaultControls.Jump.started += ChangeGrabState; //this is recommended over using the lamba (value) because its easier to unsubscribe to
-        //playerActions.DefaultControls.Jump.started += value => ChangeGrabState(value);
-        //playerActions.DefaultControls.Jump.performed += value => ChangeGrabState(value.ReadValue<float>());
+        //playerActions.DefaultControls.Jump.started += JumpCallback; //this is recommended over using the lamba (value) because its easier to unsubscribe to
+        //playerActions.DefaultControls.Jump.started += value => JumpCallback(value);
+        //playerActions.DefaultControls.Jump.performed += value => JumpCallback(value.ReadValue<float>());
         //playerActions.DefaultControls.Jump.started += value => left = value.ReadValue<bool>();
     }
 
-    private void ChangeGrabState(UnityEngine.InputSystem.InputAction.CallbackContext value)
+    private void JumpCallback(UnityEngine.InputSystem.InputAction.CallbackContext value)
     {
         if (value.started)
         {
@@ -122,27 +143,14 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void ChangeGrabState(Vector2 value)
+    private void JumpCallback(Vector2 value)
     {
         Debug.Log(value);
     }
 
-    [ContextMenu("Enable Player Controls")]
-    public void EnablePlayerControls()
-    {
-        DisableControls();
-        playerActions.Enable();
-        playerActions.XRIHead.Enable();
-        playerActions.XRILeftHand.Enable();
-        playerActions.XRIRightHand.Enable();
-        playerActions.DefaultControls.Enable();
-    }
+    #endregion
 
-    [ContextMenu("Disable Controls")]
-    public void DisableControls()
-    {
-        playerActions.Disable();
-    }
+    #region VR Line Renderer Controls
 
     public void EnableAllRays()
     {
@@ -194,6 +202,8 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    #endregion
+
     #region Action Maps
 
     public void ChangeActionMap(InputActionMap newActionMap)
@@ -235,28 +245,20 @@ public class InputManager : MonoBehaviour
             case ControlSchemeEnum.PC:
                 {
                     playerActions.asset.bindingMask = new InputBinding { groups = "PC" };
-                    baseInputModule.enabled = true;
-                    xrInputModule.enabled = false;
                     break;
                 }
             case ControlSchemeEnum.Gamepad:
                 {
                     playerActions.asset.bindingMask = new InputBinding { groups = "Gamepad" };
-                    baseInputModule.enabled = true;
-                    xrInputModule.enabled = false;
                     break;
                 }
             case ControlSchemeEnum.VR:
                 {
                     playerActions.asset.bindingMask = new InputBinding { groups = "Generic XR Controller" };
-                    baseInputModule.enabled = false;
-                    xrInputModule.enabled = true;
                     break;
                 }
             case ControlSchemeEnum.None:
                 {
-                    baseInputModule.enabled = false;
-                    xrInputModule.enabled = false;
                     break;
                 }
         }
