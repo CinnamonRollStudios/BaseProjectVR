@@ -58,14 +58,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53aefe55b7b55094eb64da8ac94d4400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseInputModule: {fileID: 0}
   xrInputModule: {fileID: 5458699068699659727}
   clearGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 0}
+    key1: {r: 1, g: 1, b: 1, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 1}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -80,8 +79,8 @@ MonoBehaviour:
     ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 0
-    atime3: 0
+    atime2: 65535
+    atime3: 65535
     atime4: 0
     atime5: 0
     atime6: 0
@@ -91,8 +90,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   defaultGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0.6686821, b: 1, a: 1}
+    key1: {r: 0, g: 0.7035146, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -136,6 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 718238476736191861}
+  - component: {fileID: 882374580}
   m_Layer: 0
   m_Name: Essentials
   m_TagString: Untagged
@@ -159,6 +159,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882374580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374193027105825693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244cb9a7b09e6e54c9cec592fc21ef52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8320974556628342965
 GameObject:
   m_ObjectHideFlags: 0

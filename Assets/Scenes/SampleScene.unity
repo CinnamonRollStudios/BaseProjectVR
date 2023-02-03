@@ -3543,23 +3543,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &882374579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4374193027105825693, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-  m_PrefabInstance: {fileID: 8320974556990400926}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &882374580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882374579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244cb9a7b09e6e54c9cec592fc21ef52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &997635889
 GameObject:
   m_ObjectHideFlags: 0
@@ -6815,9 +6798,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1990762954}
   - component: {fileID: 1990762953}
+  - component: {fileID: 1990762955}
   - component: {fileID: 1990762951}
   - component: {fileID: 1990762952}
-  - component: {fileID: 1990762955}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -7117,78 +7100,6 @@ PrefabInstance:
     - target: {fileID: 718238476736191861, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.atime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.atime2
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.atime3
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key1.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key1.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key2.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.key3.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key0.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key0.g
-      value: 0.6686821
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key0.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key1.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key1.g
-      value: 0.7035146
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: defaultGradient.key1.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839445719523254451, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
-      propertyPath: clearGradient.m_NumAlphaKeys
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4374193027105825693, guid: d12080b2d05f1e041b6ac2375f5da43e, type: 3}
       propertyPath: m_Name
